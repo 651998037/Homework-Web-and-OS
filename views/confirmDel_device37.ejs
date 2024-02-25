@@ -1,0 +1,33 @@
+<%- include("_header"); -%>
+<br>
+<br>
+<!-- <style>
+    body {
+       background: url('https://cdn.discordapp.com/attachments/1093803444130811906/1150013094769209466/1.jpg') no-repeat;
+     
+   }
+
+
+</style> -->
+<body>
+   <!-- <div class="city"> -->
+<body>
+    <h1 align="center"  style="margin-top: 100px; color: rgb(0, 0, 0);" >ยืนยันลบข้อมูลหรือไม่?</h1>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-12 d-flex justify-content-center">   
+                <form method="post" action="<%= data ? '/deletedevice37/' + data.did : '' %>" enctype="multipart/form-data" class="w-120 mx-auto">
+
+                    <% if (data && data.isMedia) { %>
+                        <a align="center" href="/device37/list" class="btn btn-danger mx-auto" style="margin-top: 20px;" >กลับ</a>
+                    <% } else { %>
+                        <a align="center" href="/device37/list" class="btn btn-danger mx-auto" style="margin-top: 20px;" >กลับ</a>
+                    <% } %>
+                    <button type="submit" class="btn btn-info mx-auto" style="margin-top: 20px;">ยืนยัน</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+<!-- </div> -->
+<%- include("_footer"); -%>

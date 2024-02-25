@@ -1,0 +1,35 @@
+<%- include("_header"); -%>
+<br>
+<br>
+<h1 align="center">เพิ่มdevice</h1>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-12 d-flex justify-content-center">
+            <form action="/device37/add" method="POST">
+               
+        
+                <div class="form-group">
+                    <label for="Name">Name:</label>
+                    <input type="text" name="Name" placeholder="Name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="mac">mac:</label>
+                    <input type="text" name="mac" placeholder="mac" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="Model">Model:</label>
+                    <input type="text" name="Model" placeholder="Model" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="version">version:</label>
+                    <input type="text" name="version" placeholder="version" class="form-control">
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">ยืนยัน</button>
+                <a href="/device37/list" class="btn btn-success">ย้อนกลับ</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("_footer"); -%>

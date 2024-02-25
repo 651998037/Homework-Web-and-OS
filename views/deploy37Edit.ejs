@@ -1,0 +1,54 @@
+<%- include("_header"); -%>
+<br>
+<br>
+<body>
+    <h1 align="center">EDIT DEPLOY</h1>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-12 d-flex justify-content-center">   
+                <form method="post" action="/editdeploy37/<%= data.did_de %>" class="w-50">
+                    <div class="form-group">
+                        <label for="did">NAME_DID</label>
+                        <select class="form-control" name="did">
+                            <option value="">กรุณาเลือก</option>
+                            <% if(device37 && device37.length > 0){ %>
+                                <% for(var i=0; i < device37.length; i++){ %>
+                                    <% if(device37[i].did === data.did) { %>
+                                        <option value="<%= device37[i].did %>" selected><%= device37[i].Name %></option>
+                                    <% } else { %>
+                                        <option value="<%= device37[i].did %>"><%= device37[i].Name %></option>
+                                    <% } %>
+                                <% } %>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sid">NAME_SID</label>
+                        <select class="form-control" name="sid">
+                            <option value="">กรุณาเลือก</option>
+                            <% if(site37 && site37.length > 0){ %>
+                                <% for(var i=0; i < site37.length; i++){ %>
+                                    <% if(site37[i].sid === data.sid) { %>
+                                        <option value="<%= site37[i].sid %>" selected><%= site37[i].Name %></option>
+                                    <% } else { %>
+                                        <option value="<%= site37[i].sid %>"><%= site37[i].Name %></option>
+                                    <% } %>
+                                <% } %>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Install">Install</label>
+                        <input type="date" class="form-control" id="Install" name="Install" value="<%= new Date(data.Install).toISOString().split('T')[0] %>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">COMMENT</label>
+                        <input type="text" class="form-control" id="comment" name="comment" value="<%= data.comment %>" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">บันทึก</button>
+                    <a href="/deploy37/list" class="btn btn-primary">ย้อนกลับ</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <%- include("_footer"); -%>

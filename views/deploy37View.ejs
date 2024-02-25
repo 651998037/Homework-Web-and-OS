@@ -1,0 +1,45 @@
+<%- include("_header"); -%>
+<br>
+<br>
+<h1 class="text-center">deploy</h1>
+
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-15">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>did_de</th>
+                        <th>did</th>
+                        <th>sid</th>
+                        <th>install</th>
+                        <th>comment</th>
+                        <th>เพิ่มเติม</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (data) { %>
+                        <% for (var i = 0; i < data.length; i++) { %>
+                            <tr>
+                                <td><%= (i + 1) %></td>
+                                <td><a href="/deploy37/Dist"><%= data[i].DeviceName %></a></td><!-- แสดง Name จาก table device37 -->
+                                <td><%= data[i].SiteName %></td>   <!-- แสดง Name จาก table site37 -->
+                                <td><%= new Date(data[i].install).toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' }) %></td>
+                                <td><%= data[i].comment %></td>
+                                <td>
+                                    <a href="/editdeploy37/<%= data[i].did_de %>" class="btn btn-primary style=width: 80px;">แก้ไข</a>
+                                    <a href="/deletedeploy37/<%= data[i].did_de %>" class="btn btn-primary style=width: 80px;">ลบ</a>
+                                </td>
+                            </tr>
+                        <% } %>
+                    <% } %> 
+                </tbody>
+            </table>
+            <a href="/deploy37/add" class="btn btn-primary">เพิ่ม</a>
+            <!-- <a href="/deploy37/add" class="btn btn-primary"></a> -->
+
+        </div>
+    </div>
+</div>
+<%- include("_footer"); -%>

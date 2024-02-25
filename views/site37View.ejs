@@ -1,0 +1,46 @@
+<%- include("_header"); -%>
+<br>
+<br>
+<h1 class="text-center">site</h1>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-15">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+
+                        <th>sid</th>
+                        <th>Name</th>
+                        <th>address</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (data) { %>
+                        <% for (var i = 0; i < data.length; i++) { %>
+                            <tr>
+                                <td><%= (i + 1) %></td>
+                                <td><%= data[i].Name %></td>
+                                <!-- <td><%= new Date(data[i].install).toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' }) %></td> -->
+                                <td><%= data[i].address %></td>
+                               
+                                
+                                    <td>
+                                        <a href="/editsite37/<%= data[i].sid %>" class="btn btn-primary style=width: 80px;">แก้ไข</a>
+                                        
+                                        <a href="/deletesite37/<%= data[i].sid %>" class="btn btn-primary style=width: 80px;">ลบ</a>
+                                    </td>
+                                    
+                                
+                            </tr>
+                        <% } %>
+                    <% } %> 
+                </tbody>
+            </table>
+            <a href="/site37/add" class="btn btn-primary">เพิ่ม</a>
+        </div>
+    </div>
+</div>
+
+
+<%- include("_footer"); -%>

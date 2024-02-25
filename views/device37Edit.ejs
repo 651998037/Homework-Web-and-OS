@@ -1,0 +1,40 @@
+<%- include("_header"); -%>
+
+<br>
+<br>
+<body>
+    <h1 align="center">แก้ไข</h1>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-12 d-flex justify-content-center">   
+            <form method="post" action="/editdevice37/<%= data.did %>" class="w-50">
+
+
+                <div class="form-group">
+                    <label for="Name">Name:</label>
+                    <input type="text" class="form-control" id="Name" Name="Name" value="<%= data.Name %>" required>
+                </div>
+               
+
+                <div class="form-group">
+                    <label for="mac">mac:</label>
+                    <input type="text" class="form-control" id="mac" Name="mac" value="<%= data.mac %>" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="Model">Model:</label>
+                    <input type="text" class="form-control" id="Model" Name="Model" value="<%= data.Model %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="version">version:</label>
+                    <input type="text" class="form-control" id="version" Name="version" value="<%= data.version %>" required>
+                </div>
+                
+                <br>
+                <a href="/device37/list" class="btn btn-primary">ย้อนกลับ</a>
+               <button type="submit" class="btn btn-success">บันทึก</button>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include("_footer"); -%>

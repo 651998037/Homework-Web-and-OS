@@ -1,0 +1,51 @@
+<%- include("_header"); -%>
+<br>
+<br>
+<h1 class="text-center">device</h1>
+<!-- <%= JSON.stringify(data) %> -->
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-15">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+
+                        <th>did</th>
+                        <th>Name</th>
+                        <th>mac</th>
+                        <th>Model</th>
+                        <th>version</th>
+                        <th>เพิ่มเติม</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (data) { %>
+                        <% for (var i = 0; i < data.length; i++) { %>
+                            <tr>
+                                <td><%= (i + 1) %></td>
+                                <td><a href="/deploy37/Dist"><%= data[i].Name %></a></td>
+                                <!-- <td><%= new Date(data[i].install).toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' }) %></td> -->
+                                <td><%= data[i].mac %></td>
+                                <td><%= data[i].Model %></td>
+                                <td><%= data[i].version %></td>
+                                
+                                
+                                    <td>
+                                        <a href="/editdevice37/<%= data[i].did %>" class="btn btn-primary style=width: 80px;">แก้ไข</a>
+                                        
+                                        <a href="/deletedevice37/<%= data[i].did %>" class="btn btn-primary style=width: 80px;">ลบ</a>
+                                    </td>
+                                    
+                                
+                            </tr>
+                        <% } %>
+                    <% } %> 
+                </tbody>
+            </table>
+            <a href="/device37/add" class="btn btn-primary">เพิ่ม</a>
+        </div>
+    </div>
+</div>
+
+
+<%- include("_footer"); -%>
